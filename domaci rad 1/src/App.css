@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: px;
+  border: 0;
+  outline: 0;
+  box-sizing: 0;
+}
+body {
+  background-color: rgb(113, 161, 243);
+}
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slika {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.podaci {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+
+  border-radius: 50px;
+  border: 3px solid white;
+  margin: 20px;
+  overflow: hidden;
+  padding: 20px;
+}
+.podatak {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+.progres_bar {
+  border-radius: 50px;
+  border: 3px solid white;
+  min-height: 20px;
+  margin: 5px;
+}
