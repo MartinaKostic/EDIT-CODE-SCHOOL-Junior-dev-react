@@ -18,7 +18,7 @@ export default function Navbar() {
         ></img>
         <h1>Udomi Me</h1>
       </div>
-      {mode != "admin" ? (
+      {mode == "admin" ? (
         <div className="navigation">
           <NavLink
             style={({ isActive }) => ({

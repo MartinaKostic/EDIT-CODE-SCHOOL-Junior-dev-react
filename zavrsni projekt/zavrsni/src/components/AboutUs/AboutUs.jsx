@@ -11,7 +11,7 @@ function AboutUs() {
     iconSize: [38, 38],
   });
   return (
-    <div className="udomi">
+    <div className="+udomi">
       <h1>Udomi Me</h1>
       <div className="onama">
         <div className="picture">
