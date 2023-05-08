@@ -1,12 +1,16 @@
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import ModeContext from "../ModeContext";
+
 //o nama exact
-export default function Navbar() {
-  const history = useNavigate();
+export default function Navbar({ changeContext }) {
+  const modeContextValue = useContext(ModeContext);
   const mode = useContext(ModeContext);
+
+  const changeMode = () => {
+    changeContext();
+  };
 
   return (
     <nav className="navbar">
@@ -18,44 +22,8 @@ export default function Navbar() {
         ></img>
         <h1>Udomi Me</h1>
       </div>
-      {mode == "admin" ? (
-        <div className="navigation">
-          <NavLink
-            style={({ isActive }) => ({
-              background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
-            })}
-            to="/popis"
-          >
-            Popis
-          </NavLink>
-          <NavLink
-            style={({ isActive }) => ({
-              background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
-            })}
-            to="/unos"
-          >
-            Unos
-          </NavLink>
-          <NavLink
-            style={({ isActive }) => ({
-              background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
-            })}
-            to="/donacije"
-          >
-            Donacije
-          </NavLink>
-          <NavLink
-            style={({ isActive }) => ({
-              background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
-            })}
-            to="/obavijesti"
-          >
-            Obavijesti
-          </NavLink>
-          <button>ADMIN</button>
-        </div>
-      ) : (
-        <div className="navigation">
+      <div className="navigation">
+        {mode == "korisnik" ? (
           <NavLink
             style={({ isActive }) => ({
               background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
@@ -64,32 +32,55 @@ export default function Navbar() {
           >
             O nama
           </NavLink>
+        ) : null}
+
+        <NavLink
+          style={({ isActive }) => ({
+            background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
+          })}
+          to="/popis"
+        >
+          Popis
+        </NavLink>
+        {mode == "admin" ? (
           <NavLink
             style={({ isActive }) => ({
               background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
             })}
-            to="/popis"
+            to="/unos"
           >
-            Popis
+            Unos
           </NavLink>
-          <NavLink
-            style={({ isActive }) => ({
-              background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
-            })}
-            to="/donacije"
-          >
-            Donacije
-          </NavLink>
-          <NavLink
-            style={({ isActive }) => ({
-              background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
-            })}
-            to="/obavijesti"
-          >
-            Obavijesti
-          </NavLink>
+        ) : null}
+        <NavLink
+          style={({ isActive }) => ({
+            background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
+          })}
+          to="/donacije"
+        >
+          Donacije
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => ({
+            background: isActive ? "rgba(255, 255, 255, 0.6)" : "transparent",
+          })}
+          to="/obavijesti"
+        >
+          Obavijesti
+        </NavLink>
+        <div className="contextButton">
+          <label className="toggle-switch">
+            <span>ADMIN</span>
+            <input
+              type="checkbox"
+              name="admin"
+              checked={modeContextValue == "admin"}
+              onChange={changeMode}
+            ></input>
+            <span className="slider round"></span>
+          </label>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

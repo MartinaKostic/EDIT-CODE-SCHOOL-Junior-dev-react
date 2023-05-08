@@ -1,65 +1,124 @@
 import "./Obavijesti.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
-function Obavijesti({ notice, setnotice }) {
+import axios from "axios";
+
+function Obavijesti() {
+  const [openForm, setOpenForm] = useState(false);
+  const [form, setForm] = useState({
+    naslov: "",
+    tekst: "",
+    vazno: false,
+    datum: new Date(),
+  });
   const [isImportant, setIsImportant] = useState(false);
-  function onChange() {
-    setIsImportant(!isImportant);
+  const [notice, setNotice] = useState([]);
+
+  function onChange(e) {
+    setIsImportant((prev) => !prev);
+    setForm({ ...form, [e.target.name]: e.target.checked });
   }
-  async function deleteNotice(idNotice) {
-    await axios.delete(`http://localhost:3002/ormar/${idNotice}`);
-    const rez = await axios.get("http://localhost:3003/obavijesti");
-    setnotice(rez.data);
+
+  useEffect(() => {
+    refetchNotice();
+  }, []);
+
+  function refetchNotice() {
+    axios.get("http://localhost:3003/obavijesti").then((res) => {
+      sortItems(res.data);
+    });
   }
+
+  async function deleteNotice(noticeId) {
+    await axios.delete(`http://localhost:3003/obavijesti/${noticeId}`);
+    refetchNotice();
+  }
+
+  const sortItems = (notices) => {
+    const sortedItems = notices.sort(
+      (a, b) => new Date(b.datum).getTime() - new Date(a.datum).getTime()
+    );
+    console.log(sortedItems);
+    setNotice(sortedItems);
+  };
+
+  const sendData = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:3003/obavijesti", form).then(() => {
+      refetchNotice();
+      setOpenForm(false);
+      setForm({
+        naslov: "",
+        tekst: "",
+        vazno: false,
+        datum: new Date(),
+      });
+    });
+  };
+
+  function inputChange(event) {
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  }
+
   return (
     <div className="section">
       <h2>Unesi novu obavijest!</h2>
+      <button onClick={() => setOpenForm(true)}>Nova Obavijest</button>
 
-      <form className="forma">
-        <div>
-          <label>
-            Naslov:
+      {openForm ? (
+        <form className="forma" onSubmit={sendData}>
+          <div>
+            <label>
+              Naslov:
+              <input
+                className="input"
+                type="text"
+                name="naslov"
+                placeholder="Unesite naslov"
+                value={form.naslov}
+                onChange={inputChange}
+                required
+              ></input>
+            </label>
+          </div>
+          <div>
+            <label>
+              <span style={{ display: "block" }}>Tekst:</span>
+              <textarea
+                className="input"
+                type="text"
+                name="tekst"
+                value={form.tekst}
+                onChange={inputChange}
+                required
+              ></textarea>
+            </label>
+          </div>
+          <label className="checkbox">
+            Važno:
             <input
-              className="input"
-              type="text"
-              name="naslov"
-              placeholder="Unesite naslov"
-              required
+              type="checkbox"
+              name="vazno"
+              checked={isImportant}
+              onChange={onChange}
             ></input>
           </label>
-        </div>
-        <div>
-          <label>
-            Tekst:
-            <input
-              className="input"
-              type="text"
-              name="text"
-              placeholder="Unesite tekst"
-              required
-            ></input>
-          </label>
-        </div>
-        <label className="checkbox">
-          Važno:
-          <input
-            type="checkbox"
-            name="vazno"
-            checked={isImportant}
-            onChange={onChange}
-          ></input>
-        </label>
-        <button className="add" type="submit">
-          Objavi!
-        </button>
-      </form>
+          <button className="add" type="submit">
+            Objavi!
+          </button>
+        </form>
+      ) : null}
 
       <div className="notices">
         {notice.map((notice) => (
           <div key={notice.id} className="notice">
+            {notice.vazno ? <p>VAZNOOOOOOOOO</p> : null}
             <div className="naslov">
               <h2>{notice.naslov}</h2>
-              <h3>Datum: {notice.datum}</h3>
+              <h3>
+                Datum: {new Date(notice.datum).toLocaleDateString("en-GB")}
+              </h3>
             </div>
             <p>{notice.tekst}</p>
             <button

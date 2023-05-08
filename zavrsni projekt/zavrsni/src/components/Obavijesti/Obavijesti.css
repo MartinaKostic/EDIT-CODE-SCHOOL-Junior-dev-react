@@ -37,7 +37,7 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
   padding: 2rem;
   margin: 10px;
   border: 1px solid #ccc;
@@ -46,11 +46,20 @@ input[type="text"] {
 }
 .naslov {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
 }
 .delete_bottun {
   border-radius: 50px;
   border-width: 3px;
   font-size: 30px;
+  width: 70px;
+  align-items: end;
+  margin-left: auto;
+  justify-content: space-around;
+}
+textarea {
+  padding: 5px;
+  width: 400px;
+  height: 150px;
+  border-radius: 19px;
 }

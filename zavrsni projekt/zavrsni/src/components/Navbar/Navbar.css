@@ -49,3 +49,11 @@
 nav a:hover {
   border: 2px solid var(--color-primary);
 }
+
+.navigation {
+  display: flex;
+}
+
+.contextButton {
+  margin-top: 15px;
+}

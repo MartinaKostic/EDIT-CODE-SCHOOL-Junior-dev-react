@@ -1,8 +1,8 @@
 import { useState } from "react";
+import "./Filter.css";
 function Filter({ udomljenFilter, vrstaFilter }) {
   const [selectedUdomljen, setSelectedUdomljen] = useState(null);
   const [selectedVrsta, setSelectedVrsta] = useState(null);
-  // const [selected2, setSelected2] = useState(null);
 
   const handleUdomljenFilterChange = (e) => {
     if (e.target.name == "filterN") {
@@ -30,8 +30,8 @@ function Filter({ udomljenFilter, vrstaFilter }) {
   };
   return (
     <div>
-      <div>
-        <label>
+      <div className="filter">
+        <label className="filterItem">
           <input
             type="radio"
             name="filterU"
@@ -41,7 +41,7 @@ function Filter({ udomljenFilter, vrstaFilter }) {
           />
           Udomljeni
         </label>
-        <label>
+        <label className="filterItem">
           <input
             type="radio"
             name="filterN"
@@ -57,8 +57,8 @@ function Filter({ udomljenFilter, vrstaFilter }) {
         </button>
       </div>
 
-      <div>
-        <label>
+      <div className="filter">
+        <label className="filterItem">
           <input
             type="radio"
             name="filter"
@@ -68,7 +68,7 @@ function Filter({ udomljenFilter, vrstaFilter }) {
           />
           Pas
         </label>
-        <label>
+        <label className="filterItem">
           <input
             type="radio"
             name="filter"
@@ -78,7 +78,7 @@ function Filter({ udomljenFilter, vrstaFilter }) {
           />
           Mačka
         </label>
-        <label>
+        <label className="filterItem">
           <input
             type="radio"
             name="filter"
