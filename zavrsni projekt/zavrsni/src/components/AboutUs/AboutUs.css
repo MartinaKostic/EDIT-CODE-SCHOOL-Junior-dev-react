@@ -7,6 +7,7 @@
   margin: 60px;
   margin-top: 0px;
 }
+
 .onama {
   display: flex;
   flex-direction: row;
@@ -15,7 +16,7 @@
   flex-basis: 66.66%;
   display: flex;
   overflow: hidden;
-  height: 615px;
+  height: 120vh;
   margin: 19px;
   border-radius: 49px;
 }

@@ -11,12 +11,13 @@ function AboutUs() {
     iconSize: [38, 38],
   });
   return (
-    <div className="+udomi">
+    <div className="udomi">
       <h1>Udomi Me</h1>
       <div className="onama">
         <div className="picture">
           <img src="../../../public/landing.jpg" alt="Udomi" />
         </div>
+
         <p className="p">
           Udomi Me je azil za životinje smješten u Baškoj Vodi, posvećen
           pronalaženju novih domova za napuštene i zlostavljane životinje.
