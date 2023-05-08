@@ -9,24 +9,27 @@ import Unos from "./Unos/Unos";
 import Donacije from "./Donacije/Donacije";
 import Navbar from "./Navbar/Navbar";
 import Filter from "./Filter/Filter";
+
 function MainComponent() {
-  const mode = useContext(ModeContext);
   const [animals, setAnimals] = useState([]);
-  const [notice, setNotice] = useState([]);
+
   const [filteredAnimals, setFilteredAnimals] = useState([]);
   const [udomljenFilter, setUdomljenFilter] = useState(null);
   const [vrstaFilter, setVrstaFilter] = useState("");
+  const [mode, setMode] = useState("korisnik");
 
   //dohvati sve zivotinje
   useEffect(() => {
-    axios.get("http://localhost:3003/zivotinje").then((rez) => {
-      setAnimals(rez.data);
-      setFilteredAnimals(rez.data);
-    });
-    axios.get("http://localhost:3003/obavijesti").then((rez) => {
-      setNotice(rez.data);
-    });
+    refetchAnimals();
   }, []);
+
+  function refetchAnimals() {
+    axios.get("http://localhost:3003/zivotinje").then((res) => {
+      setAnimals(res.data);
+      setFilteredAnimals(res.data);
+    });
+    resetFilters();
+  }
 
   //filtriranje:
   useEffect(() => {
@@ -60,36 +63,53 @@ function MainComponent() {
     setFilteredAnimals(animals);
   }, [udomljenFilter, vrstaFilter]);
 
+  function changeContext() {
+    setMode(mode == "korisnik" ? "admin" : "korisnik");
+  }
+
+  function addAnimal(animal) {
+    setAnimals((state) => [...state, animal]);
+    setFilteredAnimals((state) => [...state, animal]);
+    resetFilters();
+  }
+
+  function resetFilters() {
+    setVrstaFilter(null);
+    setUdomljenFilter(null);
+  }
+
   return (
     <div>
-      <Router>
-        <div className="App">
-          <Navbar mode={mode} />
-          <div className="Content">
-            <Routes>
-              <Route exact path="/" element={<AboutUs />} />
-              <Route
-                path="/popis"
-                element={
-                  <div>
-                    <Filter
-                      udomljenFilter={setUdomljenFilter}
-                      vrstaFilter={setVrstaFilter}
-                    ></Filter>
-                    <Popis animals={filteredAnimals} />
-                  </div>
-                }
-              />
-              <Route path="/unos" element={<Unos add={filteredAnimals} />} />
-              <Route path="/donacije" element={<Donacije />} />
-              <Route
-                path="/obavijesti"
-                element={<Obavijesti notice={notice} setnotice={setNotice} />}
-              />
-            </Routes>
+      <ModeContext.Provider value={mode}>
+        <Router>
+          <div className="App">
+            <Navbar changeContext={changeContext} />
+            <div className="Content">
+              <Routes>
+                <Route exact path="/" element={<AboutUs />} />
+                <Route
+                  path="/popis"
+                  element={
+                    <div>
+                      <Filter
+                        udomljenFilter={setUdomljenFilter}
+                        vrstaFilter={setVrstaFilter}
+                      ></Filter>
+                      <Popis
+                        animals={filteredAnimals}
+                        fetchNewData={refetchAnimals}
+                      />
+                    </div>
+                  }
+                />
+                <Route path="/unos" element={<Unos add={addAnimal} />} />
+                <Route path="/donacije" element={<Donacije />} />
+                <Route path="/obavijesti" element={<Obavijesti />} />
+              </Routes>
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </ModeContext.Provider>
     </div>
   );
 }
