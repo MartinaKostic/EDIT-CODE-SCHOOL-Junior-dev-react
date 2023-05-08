@@ -37,7 +37,6 @@ function Donacije() {
       opis: form.opis,
       vrijednost: Number(form.iznos),
     };
-    console.log(send);
     axios.post("http://localhost:3003/donacije", send).then((rez) => {
       fetchData();
     });
@@ -46,19 +45,14 @@ function Donacije() {
   };
 
   function inputChange(event) {
-    console.log(event);
     const { name, value } = event.target;
 
     setForm({ ...form, [name]: value });
   }
 
-  async function handleSave() {}
-
   return (
     <div>
-      <button className="botun" onClick={() => setOpenForm(true)}>
-        Nova Donacija
-      </button>
+      <button onClick={() => setOpenForm(true)}>Nova Donacija</button>
       {openForm ? (
         <div>
           <form className="forma" onSubmit={sendData}>
@@ -104,11 +98,9 @@ function Donacije() {
                 ></textarea>
               </label>
             </div>
-            <div>
+            <div className="formDonacijaButtons">
               <button onClick={() => setOpenForm(false)}>Cancel</button>
-              <button className="add" type="submit">
-                Dodaj!
-              </button>
+              <button type="submit">Dodaj!</button>
             </div>
           </form>
         </div>
