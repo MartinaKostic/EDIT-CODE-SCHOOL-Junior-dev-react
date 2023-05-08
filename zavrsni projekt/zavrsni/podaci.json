@@ -1,31 +1,31 @@
 {
   "obavijesti": [
     {
-      "id": 1,
       "naslov": "Svečano otvorenje",
-      "datum": "2023-04-17",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
-      "vazno": true
+      "tekst": "Lorem ipsum dolor sit amet. Non asperiores quibusdam et quae nihil ea cupiditate voluptas. Eum aspernatur veniam ut quibusdam tempora ab maiores magni ut voluptatem consequatur est consequatur molestiae. Qui voluptatem doloremque et veniam aliquam ut neque fugiat et placeat quae non distinctio facere qui unde autem. Et ratione facilis ut amet eveniet At laboriosam ipsa cum sequi rerum quo aperiam quisquam in enim veniam aut consequatur expedita.",
+      "vazno": true,
+      "datum": "2023-05-08T13:34:59.518Z",
+      "id": 9
     },
     {
-      "id": 2,
       "naslov": "Međunarodni dan mačaka",
-      "datum": "2023-02-17",
-      "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
-      "vazno": false
+      "tekst": "Lorem ipsum dolor sit amet. Et sunt pariatur aut doloribus perferendis eos odio optio ea labore expedita. Rem numquam dignissimos et mollitia delectus eos iure voluptatem ex saepe eaque in rerum aliquid et voluptatibus veniam vel magnam temporibus.",
+      "vazno": true,
+      "datum": "2023-03-03T13:34:59.518Z",
+      "id": 10
     }
   ],
   "donacije": [
     {
       "id": 1,
-      "kategorija": "donirano",
+      "kategorija": "trazi",
       "tip": "Hrana",
       "vrijednost": 25,
       "opis": "Suha hrana za pse - 10kg"
     },
     {
       "id": 2,
-      "kategorija": "trazi",
+      "kategorija": "donirano",
       "tip": "Igračke",
       "vrijednost": 15,
       "opis": "Grebalica za mačke"
@@ -36,6 +36,13 @@
       "tip": "Ostalo",
       "vrijednost": 25,
       "opis": "Kavez za srednje papige"
+    },
+    {
+      "kategorija": "nudi",
+      "tip": "lijekovi",
+      "opis": "nudim lijekove protiv buha",
+      "vrijednost": 10,
+      "id": 4
     }
   ],
   "zivotinje": [
@@ -43,7 +50,7 @@
       "id": 1,
       "ime": "Garfield",
       "vrsta": "mačka",
-      "slika": "../../../public/garfield.jpg",
+      "slika": "garfield.jpg",
       "cip": false,
       "godine": 44,
       "opis": "Voli lazanje",
@@ -51,21 +58,21 @@
       "udomljen": true
     },
     {
-      "id": 2,
-      "ime": "Snoopy",
+      "ime": "I am Snoopy",
       "vrsta": "pas",
-      "slika": "../../../public/snoopy.jpg",
+      "slika": "snoopy.jpg",
       "cip": true,
-      "godine": 50,
+      "godine": "50",
       "opis": "Više od običnog psa",
-      "pregled": "2000-02-13",
-      "udomljen": true
+      "pregled": "2000-03-02",
+      "udomljen": true,
+      "id": 2
     },
     {
       "id": 3,
       "ime": "Špirko",
       "vrsta": "mačka",
-      "slika": "../../../public/špirko.jpg",
+      "slika": "špirko.jpg",
       "cip": false,
       "godine": 5,
       "opis": "Puno mjauče",
@@ -76,7 +83,7 @@
       "id": 4,
       "ime": "Ksenija",
       "vrsta": "pas",
-      "slika": "../../../public/ksenija.jpg",
+      "slika": "ksenija.jpg",
       "cip": true,
       "godine": 50,
       "opis": "Diva",
@@ -87,7 +94,7 @@
       "id": 5,
       "ime": "Franko",
       "vrsta": "kunić",
-      "slika": "../../../public/franko.jpg",
+      "slika": "franko.jpg",
       "cip": true,
       "godine": 1,
       "opis": "Znatiželjan i uvijek gladan",
@@ -98,43 +105,17 @@
       "id": 6,
       "ime": "Roko",
       "vrsta": "pas",
-      "slika": "../../../public/roko.jpg",
+      "slika": "roko.jpg",
       "cip": true,
       "godine": 3,
       "opis": "Uvijek mu je hladno",
       "pregled": "2015-02-18",
       "udomljen": false
-    },
-    {
-      "zivotinja": {
-        "ime": "",
-        "vrsta": "pas",
-        "cip": "on",
-        "opis": "",
-        "godine": 22,
-        "slika": "dzemper2.JPG",
-        "pregled": "2023-05-17",
-        "udomljen": "on"
-      },
-      "id": 7
-    },
-    {
-      "zivotinja": {
-        "ime": "",
-        "vrsta": "macka",
-        "cip": "on",
-        "opis": "",
-        "godine": 33,
-        "slika": "haljina2.JPG",
-        "pregled": "2023-05-03",
-        "udomljen": false
-      },
-      "id": 8
     }
   ],
   "vrsta": [
-    "macka",
+    "mačka",
     "pas",
-    "kunic"
+    "kunić"
   ]
 }

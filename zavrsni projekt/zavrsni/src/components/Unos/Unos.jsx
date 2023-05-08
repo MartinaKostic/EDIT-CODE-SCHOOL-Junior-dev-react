@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Unos.css";
+import { useNavigate } from "react-router-dom";
 
 function Unos(props) {
   const [form, setForm] = useState({
@@ -16,12 +17,15 @@ function Unos(props) {
   const [vrsta, setVrsta] = useState([]);
   const [isCheckedChip, setIsCheckedChip] = useState(false);
   const [isCheckedAdopted, setIsCheckedAdopted] = useState(false);
+  const navigate = useNavigate();
 
   const sendData = (e) => {
     e.preventDefault();
     const send = formatData(form);
-    axios.post("http://localhost:3003/zivotinje", send).then((rez) => {
-      props.add((state) => [...state, rez.data]);
+    console.log(send);
+    axios.post("http://localhost:3003/zivotinje", send).then((res) => {
+      props.add(res.data);
+      navigate("/popis");
     });
   };
 
@@ -33,17 +37,16 @@ function Unos(props) {
   }, []);
 
   function inputChange(event) {
-    console.log(event);
     const { name, value } = event.target;
 
     if (name == "slika") {
       setForm({ ...form, [name]: event.target.files[0].name });
     } else if (name == "cip") {
-      setIsCheckedChip(!isCheckedChip);
-      setForm({ ...form, [name]: value });
+      setIsCheckedChip((prevValue) => !prevValue);
+      setForm({ ...form, [name]: event.target.checked });
     } else if (name == "udomljen") {
-      setIsCheckedAdopted(!isCheckedAdopted);
-      setForm({ ...form, [name]: value });
+      setIsCheckedAdopted((prevValue) => !prevValue);
+      setForm({ ...form, [name]: event.target.checked });
     } else {
       setForm({ ...form, [name]: value });
     }
@@ -51,16 +54,14 @@ function Unos(props) {
 
   function formatData(objekt) {
     return {
-      zivotinja: {
-        ime: objekt.ime,
-        vrsta: objekt.vrsta,
-        cip: objekt.cip,
-        opis: objekt.opis,
-        godine: Number(objekt.godine),
-        slika: objekt.slika,
-        pregled: objekt.pregled,
-        udomljen: objekt.udomljen,
-      },
+      ime: objekt.ime,
+      vrsta: objekt.vrsta,
+      cip: objekt.cip,
+      opis: objekt.opis,
+      godine: Number(objekt.godine),
+      slika: objekt.slika,
+      pregled: objekt.pregled,
+      udomljen: objekt.udomljen,
     };
   }
 
@@ -90,25 +91,14 @@ function Unos(props) {
           <input
             className="input"
             type="text"
-            name="velicina"
-            value={form.velicina}
+            name="ime"
+            value={form.ime}
             onChange={inputChange}
             required
           ></input>
         </label>
       </div>
-      <div>
-        <label className="toggle-switch">
-          Cip:
-          <input
-            type="checkbox"
-            name="cip"
-            checked={isCheckedChip}
-            onChange={inputChange}
-          ></input>
-          <span className="slider round"></span>
-        </label>
-      </div>
+
       <div>
         <label>
           Godine:
@@ -119,6 +109,18 @@ function Unos(props) {
             onChange={inputChange}
             required
           ></input>
+        </label>
+      </div>
+      <div>
+        <label>
+          <span style={{ display: "block" }}>Opis</span>
+          <textarea
+            className="input"
+            type="text"
+            name="opis"
+            value={form.opis}
+            onChange={inputChange}
+          ></textarea>
         </label>
       </div>
       <div>
@@ -146,9 +148,21 @@ function Unos(props) {
           ></input>
         </label>
       </div>
-      <div>
+      <div className="toggle">
+        <span>Cip</span>
         <label className="toggle-switch">
-          Udomljen:
+          <input
+            type="checkbox"
+            name="cip"
+            checked={isCheckedChip}
+            onChange={inputChange}
+          ></input>
+          <span className="slider round"></span>
+        </label>
+      </div>
+      <div className="toggle">
+        <span>Udomljen</span>
+        <label className="toggle-switch">
           <input
             type="checkbox"
             name="udomljen"
