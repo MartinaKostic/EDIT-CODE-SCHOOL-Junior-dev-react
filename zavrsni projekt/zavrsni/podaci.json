@@ -1,24 +1,24 @@
 {
   "obavijesti": [
     {
-      "naslov": "Svečano otvorenje",
-      "tekst": "Lorem ipsum dolor sit amet. Non asperiores quibusdam et quae nihil ea cupiditate voluptas. Eum aspernatur veniam ut quibusdam tempora ab maiores magni ut voluptatem consequatur est consequatur molestiae. Qui voluptatem doloremque et veniam aliquam ut neque fugiat et placeat quae non distinctio facere qui unde autem. Et ratione facilis ut amet eveniet At laboriosam ipsa cum sequi rerum quo aperiam quisquam in enim veniam aut consequatur expedita.",
-      "vazno": true,
-      "datum": "2023-05-08T13:34:59.518Z",
-      "id": 9
-    },
-    {
       "naslov": "Međunarodni dan mačaka",
       "tekst": "Lorem ipsum dolor sit amet. Et sunt pariatur aut doloribus perferendis eos odio optio ea labore expedita. Rem numquam dignissimos et mollitia delectus eos iure voluptatem ex saepe eaque in rerum aliquid et voluptatibus veniam vel magnam temporibus.",
       "vazno": true,
       "datum": "2023-03-03T13:34:59.518Z",
       "id": 10
+    },
+    {
+      "naslov": "Svečano otvorenje",
+      "tekst": "Lorem ipsum dolor sit amet. Qui iusto nihil ad aspernatur laudantium vel quam quia est itaque mollitia et laudantium atque ut galisum nemo. Ea corrupti nobis et consequuntur culpa qui consequatur ducimus. In neque doloremque et laboriosam accusamus et voluptatum expedita et tempora recusandae et ullam aliquam ut maxime dolorem.",
+      "vazno": false,
+      "datum": "2023-05-09T00:55:04.851Z",
+      "id": 11
     }
   ],
   "donacije": [
     {
       "id": 1,
-      "kategorija": "trazi",
+      "kategorija": "donirano",
       "tip": "Hrana",
       "vrijednost": 25,
       "opis": "Suha hrana za pse - 10kg"
@@ -43,6 +43,13 @@
       "opis": "nudim lijekove protiv buha",
       "vrijednost": 10,
       "id": 4
+    },
+    {
+      "kategorija": "trazi",
+      "tip": "hrana",
+      "opis": "Treba hrana za mladunčad",
+      "vrijednost": 88,
+      "id": 5
     }
   ],
   "zivotinje": [

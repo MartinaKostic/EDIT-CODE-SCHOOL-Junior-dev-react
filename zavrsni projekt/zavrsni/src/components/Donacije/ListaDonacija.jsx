@@ -35,9 +35,15 @@ function ListaDonacija({ donacije, refetch }) {
             .filter((d) => d.kategorija == "trazi")
             .map((donacija) => (
               <div key={donacija.id} className="donacija">
-                <p>Tip: {donacija.tip}</p>
-                <p>Iznos: {donacija.vrijednost}</p>
-                <p>Opis: {donacija.opis}</p>
+                <p>
+                  Tip: <span className="detalji">{donacija.tip}</span>
+                </p>
+                <p>
+                  Iznos: <span className="detalji">{donacija.vrijednost}</span>
+                </p>
+                <p>
+                  Opis: <span className="detalji">{donacija.opis}</span>
+                </p>
                 {mode == "admin" ? (
                   <div>
                     <button
@@ -73,9 +79,15 @@ function ListaDonacija({ donacije, refetch }) {
             .filter((d) => d.kategorija == "nudi")
             .map((donacija) => (
               <div key={donacija.id} className="donacija">
-                <p>Tip: {donacija.tip}</p>
-                <p>Iznos: {donacija.vrijednost}</p>
-                <p>Opis: {donacija.opis}</p>
+                <p>
+                  Tip: <span className="detalji">{donacija.tip}</span>
+                </p>
+                <p>
+                  Iznos: <span className="detalji">{donacija.vrijednost}</span>
+                </p>
+                <p>
+                  Opis: <span className="detalji">{donacija.opis}</span>
+                </p>
                 {mode == "admin" ? (
                   <div>
                     <button
@@ -102,9 +114,15 @@ function ListaDonacija({ donacije, refetch }) {
             .filter((d) => d.kategorija == "donirano")
             .map((donacija) => (
               <div key={donacija.id} className="donacija">
-                <p>Tip: {donacija.tip}</p>
-                <p>Iznos: {donacija.vrijednost}</p>
-                <p>Opis: {donacija.opis}</p>
+                <p>
+                  Tip: <span className="detalji">{donacija.tip}</span>
+                </p>
+                <p>
+                  Iznos: <span className="detalji">{donacija.vrijednost}</span>
+                </p>
+                <p>
+                  Opis: <span className="detalji">{donacija.opis}</span>
+                </p>
                 {mode == "admin" ? (
                   <div>
                     <button

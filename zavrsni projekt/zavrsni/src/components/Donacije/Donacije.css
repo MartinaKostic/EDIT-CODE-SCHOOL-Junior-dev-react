@@ -87,7 +87,7 @@ textarea {
   display: flex;
   justify-content: center;
   padding: 20px 0px;
-  color: var(--color-text);
+  color: var(--color-attention);
   text-transform: uppercase;
   font-size: xx-large;
 }
@@ -116,4 +116,7 @@ textarea {
 .formDonacijaButtons {
   display: flex;
   gap: 15px;
+}
+.detalji {
+  font-weight: lighter;
 }

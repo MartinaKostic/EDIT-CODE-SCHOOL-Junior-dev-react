@@ -63,3 +63,7 @@ textarea {
   height: 150px;
   border-radius: 19px;
 }
+.important {
+  color: var(--color-attention);
+  font-weight: bold;
+}

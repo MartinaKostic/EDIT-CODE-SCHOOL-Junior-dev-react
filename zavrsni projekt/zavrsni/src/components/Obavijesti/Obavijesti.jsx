@@ -2,8 +2,11 @@ import "./Obavijesti.css";
 import { useEffect, useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import axios from "axios";
+import { useContext } from "react";
+import ModeContext from "../ModeContext";
 
 function Obavijesti() {
+  const mode = useContext(ModeContext);
   const [openForm, setOpenForm] = useState(false);
   const [form, setForm] = useState({
     naslov: "",
@@ -95,15 +98,18 @@ function Obavijesti() {
               ></textarea>
             </label>
           </div>
-          <label className="checkbox">
-            Važno:
-            <input
-              type="checkbox"
-              name="vazno"
-              checked={isImportant}
-              onChange={onChange}
-            ></input>
-          </label>
+          {mode == "admin" ? (
+            <label className="checkbox">
+              Važno:
+              <input
+                type="checkbox"
+                name="vazno"
+                checked={isImportant}
+                onChange={onChange}
+              ></input>
+            </label>
+          ) : null}
+
           <button className="add" type="submit">
             Objavi!
           </button>
@@ -113,7 +119,7 @@ function Obavijesti() {
       <div className="notices">
         {notice.map((notice) => (
           <div key={notice.id} className="notice">
-            {notice.vazno ? <p>VAZNOOOOOOOOO</p> : null}
+            {notice.vazno ? <p className="important">VAŽNO!</p> : null}
             <div className="naslov">
               <h2>{notice.naslov}</h2>
               <h3>
@@ -121,12 +127,14 @@ function Obavijesti() {
               </h3>
             </div>
             <p>{notice.tekst}</p>
-            <button
-              className="delete_bottun"
-              onClick={() => deleteNotice(notice.id)}
-            >
-              <RiDeleteBinLine></RiDeleteBinLine>
-            </button>
+            {mode == "admin" ? (
+              <button
+                className="delete_bottun"
+                onClick={() => deleteNotice(notice.id)}
+              >
+                <RiDeleteBinLine></RiDeleteBinLine>
+              </button>
+            ) : null}
           </div>
         ))}
       </div>

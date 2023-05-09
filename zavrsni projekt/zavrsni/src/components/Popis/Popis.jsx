@@ -47,6 +47,14 @@ function Popis({ animals, fetchNewData }) {
     setEditmode(false);
     fetchNewData();
   }
+  async function handleAdopted(id) {
+    await axios
+      .patch(`http://localhost:3003/zivotinje/${id}`, {
+        udomljen: true,
+      })
+      .then((res) => console.log(res));
+    fetchNewData();
+  }
 
   function prepareData(animal) {
     const newData = {
@@ -203,21 +211,31 @@ function Popis({ animals, fetchNewData }) {
                 )}
               </div>
 
-              <h3>Vrsta: {animal.vrsta}</h3>
-              <p>Godine: {animal.godine}</p>
-              <p>Opis: {animal.opis}</p>
-              <p>Zadnji pregled:{animal.pregled}</p>
+              <h3>
+                Vrsta: <span className="detalji">{animal.vrsta}</span>
+              </h3>
+              <p>
+                Godine: <span className="detalji">{animal.godine}</span>
+              </p>
+              <p>
+                Opis: <span className="detalji">{animal.opis}</span>
+              </p>
+              <p>
+                Zadnji pregled:{" "}
+                <span className="detalji">{animal.pregled}</span>
+              </p>
 
-              {mode == "korisnik" ? (
-                <button>Udomi</button>
-              ) : (
+              {mode == "korisnik" && animal.udomljen == false && (
+                <button onClick={() => handleAdopted(animal.id)}>Udomi</button>
+              )}
+              {mode == "admin" ? (
                 <div>
                   <button onClick={() => edit(animal)}>Uredi</button>
                   <button onClick={() => deleteAnimal(animal.id)}>
                     Izbriši
                   </button>
                 </div>
-              )}
+              ) : null}
             </>
           )}
         </div>
