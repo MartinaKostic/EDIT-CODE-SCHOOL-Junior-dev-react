@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../src/fonts/POPPINS-MEDIUM.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ffb9b9;
+  background-color: #ffb9b9;
+  font-weight: bold;
+}
+
+.table tbody tr:hover {
+  background-color: #ffdada;
+}
+
+.slika {
+  width: 120px;
+  height: 100px;
+}
+.botun {
+  border-radius: 50px;
+  border-width: 3px;
+}
+.rozi_botun {
+  margin: 10px;
+  border-radius: 50px;
+  border-width: 3px;
+  background-color: #ffdada;
+}
+.botun:hover,
+.rozi_botun:hover {
+  border-color: #ffb9b9;
+  border-width: 3px;
+}
+/* new */
+select {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.forma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}

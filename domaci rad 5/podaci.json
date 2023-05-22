@@ -1,0 +1,153 @@
+{
+  "ormar": [
+    {
+      "odjeca": {
+        "vrsta": "majica",
+        "velicina": "M",
+        "boja": "#ffd1d1",
+        "cijena": 15,
+        "slika": "majica.JPG"
+      },
+      "id": 1
+    },
+    {
+      "odjeca": {
+        "vrsta": "majica",
+        "velicina": "S",
+        "cijena": 20,
+        "boja": "#ffe2d1",
+        "slika": "majica2.JPG"
+      },
+      "id": 2
+    },
+    {
+      "odjeca": {
+        "vrsta": "hlače",
+        "velicina": "L",
+        "boja": "#a3bdff",
+        "cijena": 28,
+        "slika": "hlace2.JPG"
+      },
+      "id": 3
+    },
+    {
+      "odjeca": {
+        "vrsta": "hlače",
+        "velicina": "S",
+        "boja": "#85268c",
+        "cijena": 13,
+        "slika": "hlace.JPG"
+      },
+      "id": 4
+    },
+    {
+      "odjeca": {
+        "vrsta": "suknja",
+        "velicina": "S",
+        "boja": "#0a4d0e",
+        "cijena": 18,
+        "slika": "suknja2.JPG"
+      },
+      "id": 5
+    },
+    {
+      "odjeca": {
+        "vrsta": "suknja",
+        "velicina": "S",
+        "cijena": 18,
+        "boja": "#47003f",
+        "slika": "suknja.JPG"
+      },
+      "id": 6
+    },
+    {
+      "odjeca": {
+        "vrsta": "košulja",
+        "velicina": "M",
+        "boja": "#94c2ff",
+        "cijena": 25,
+        "slika": "kosulja.JPG"
+      },
+      "id": 7
+    },
+    {
+      "odjeca": {
+        "vrsta": "kaput",
+        "velicina": "L",
+        "boja": "#ffe3bd",
+        "cijena": 55,
+        "slika": "kaput.JPG"
+      },
+      "id": 8
+    },
+    {
+      "odjeca": {
+        "vrsta": "kaput",
+        "velicina": "M",
+        "boja": "#ff471a",
+        "cijena": 75,
+        "slika": "kaput2.JPG"
+      },
+      "id": 9
+    },
+    {
+      "odjeca": {
+        "vrsta": "haljina",
+        "velicina": "S",
+        "boja": "#000e57",
+        "cijena": 150,
+        "slika": "haljina2.JPG"
+      },
+      "id": 10
+    },
+    {
+      "odjeca": {
+        "vrsta": "haljina",
+        "velicina": "M",
+        "boja": "#fd1c6b",
+        "cijena": 150,
+        "slika": "haljina.JPG"
+      },
+      "id": 11
+    },
+    {
+      "odjeca": {
+        "vrsta": "džemper",
+        "velicina": "M",
+        "cijena": 8,
+        "boja": "#85c6c7",
+        "slika": "dzemper2.JPG"
+      },
+      "id": 12
+    },
+    {
+      "odjeca": {
+        "vrsta": "džemper",
+        "velicina": "L",
+        "cijena": 22,
+        "boja": "#bf78b7",
+        "slika": "dzemper3.JPG"
+      },
+      "id": 13
+    },
+    {
+      "odjeca": {
+        "vrsta": "džemper",
+        "velicina": "L",
+        "cijena": 28,
+        "boja": "#cf5f3a",
+        "slika": "dzemper.JPG"
+      },
+      "id": 14
+    }
+  ],
+  "vrsta_odjece": [
+    "majica",
+    "hlače",
+    "suknja",
+    "haljina",
+    "košulja",
+    "kaput",
+    "džemper"
+  ]
+}
