@@ -1,0 +1,2 @@
+# Domaci rad 3
+Napraviti formu za unos uz korištenje naučenih koncepata o react kukama. Funkcionalnosti koje bi zadatak trebao zadovoljavati su: polja za unos bi trebala biti implementirana kao kontrolirani elementi i po mogućnosti zasebne komponente, automatska validacija prilikom promjene vrijednosti unosa, izbacivanje poruke upozorenja ukoliko korisnik nije prihvatio uvjete a kliknuo je "Naruči", nakon uspješne narudžbe ispisati sažetak podataka uz mogućnost uvjetnog renderiranja.
