@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+button {
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: lightblue;
+  color: black;
+  padding: 5px 10px;
+  margin: 5px;
+  height: 45px;
+  width: 250px;
+  overflow: hidden;
+}
+
+button:hover:not([disabled]) {
+  border: 1px solid black;
+  background-color: #24a8c6;
+  color: #ffffff;
+  width: 300px;
+}
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
