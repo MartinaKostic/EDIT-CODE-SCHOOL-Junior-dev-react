@@ -1,0 +1,73 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Dongle", sans-serif;
+}
+input {
+  display: block;
+  width: -webkit-fill-available;
+}
+h2 {
+  text-align: center;
+  margin-top: 30px;
+}
+.odabir {
+  font-size: 15px;
+  margin: 20px 0px;
+}
+.main {
+  height: 750px;
+  background-color: gainsboro;
+  width: 700px;
+  border-radius: 30px;
+}
+.container {
+  display: block;
+  position: relative;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.subcontainer {
+  font-size: 15px;
+  margin: 20px 0px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 15px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 50%;
+}
+select {
+  width: 100%;
+
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+input[type="text"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
