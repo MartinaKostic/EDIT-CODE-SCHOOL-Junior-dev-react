@@ -1,0 +1,45 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body {
+  background-image: url("../public/bgrr.jpg");
+  background-size: 99%;
+}
+button {
+  margin: 10px;
+  background: rgba(255, 222, 5, 0.888);
+}
+button:disabled,
+button[disabled] {
+  pointer-events: none;
+}
+.logos {
+  display: flex;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  padding: 0 50px;
+}
+.result {
+  display: flex;
+  align-items: end;
+}
+.teams {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
