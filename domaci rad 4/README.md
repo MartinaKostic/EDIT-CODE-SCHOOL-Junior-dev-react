@@ -1,0 +1,3 @@
+# Domaci rad 4
+Zadatak je bio napraviti React aplikaciju koja će prilikom pokretanja dohvatiti pet pitanja i spremiti ih unutar komponente. Korisniku je potrebno prikazati prvo pitanje i potencijalne odgovore. Trebalo je implementirati što više od navedenih funkcionalnosti: dodajte mogućnost odgovora na trenutno pitanje i prikaz je li odgovor bio točan ili ne, nakon odgovora se prikazuje iduće pitanje, na ekranu bi trebalo biti vidljivo koliko je ukupno pitanja i na kojem smo trenutno pitanju, korisniku bi trebao biti prikazan njegov trenutni rezultat, nakon kraja igre ponudite korisniku mogućnost ponovnog igranja (sa novim pitanjima). 
+Neke od naprednih mogućnosti su bile to da prije početka igre se ponudi odabir težine, kategorije ili broja pitanja. 
